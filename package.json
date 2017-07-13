@@ -1,0 +1,17 @@
+{
+  "name": "node-post",
+  "version": "1.0.0",
+  "description": "Receives POST and send an email",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "nodemailer": "^4.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
