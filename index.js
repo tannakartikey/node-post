@@ -6,18 +6,15 @@ if (process.env.DEV_ENV == "DEVELOPMENT") {
 }
 var http = require('http');
 var qs = require('querystring');
-var data;
 var allowed_domains = process.env.ALLOWED_DOMAINS.split(',');
 const nodemailer = require('nodemailer');
 var server = http.createServer(function(req, res) {
     var data = '';
-    var payload;
-    var body;
     if (req.method == "POST") {
         req.on('data', function(chunk) {
             data += chunk;
-            payload = JSON.parse(data);
-            body = JSON.stringify(payload, null, 2);
+            var payload = JSON.parse(data);
+            var body = JSON.stringify(payload, null, 2);
             let transporter = nodemailer.createTransport({
                 host: process.env.SMTP_HOST,
                 port: process.env.SMTP_PORT,
